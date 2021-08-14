@@ -112,6 +112,8 @@ ul {
 
 /* Стилизирует ссылки в хедере */
 .nav-link {
+  position: relative;
+
   display: block;
   color: var(--link-color);
   font-style: normal;
@@ -120,6 +122,35 @@ ul {
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link::after {
+  content: "";
+  display: block;
+  padding: 0px;
+  margin: 0px;
+
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0px;
+  bottom: 0px;
+
+  background: #2196f3;
+  border-radius: 2px;
+  opacity: 0;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after {
+  opacity: 1;
+}
+.nav-link.current::after {
+  opacity: 1;
 }
 .nav-list .nav-link:hover,
 .nav-list .nav-link:focus {
@@ -150,6 +181,10 @@ ul {
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-link:hover,
@@ -359,6 +394,10 @@ ul {
   border: none;
   border-radius: 50%;
   margin-right: 10px;
+
+  transition-property: background-color color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-logo {
   fill: currentColor;
@@ -398,6 +437,10 @@ ul {
   height: 92px;
   border: 1px solid var(--main-partners-color);
   border-radius: 4px;
+
+  transition-property: border color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .partners-item .partners-link:hover,
 .partners-item .partners-link:focus {
@@ -450,6 +493,10 @@ ul {
   font-style: normal;
   font-weight: normal;
   line-height: 1.7;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-item .address-link:hover,
 .address-item .address-link:focus {
@@ -500,6 +547,10 @@ ul {
   border: none;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sitebar-link:hover,
 .sitebar-link:focus {
@@ -552,6 +603,10 @@ ul {
   border-radius: 4px;
   padding: 6px 22px;
   border: none;
+
+  transition-property: background-color color box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
@@ -577,6 +632,36 @@ ul {
   margin-right: 30px;
   margin-bottom: 30px;
 }
+.portfolio-actions {
+  position: relative;
+}
+.text-overlay {
+  position: absolute;
+  text-align: left;
+  padding: 63px 24px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: #110d0d;
+  opacity: 0;
+}
+.portfolio-link:hover:.text-overlay,
+.portfolio-link:focus:.text-overlay {
+  opacity: 1;
+}
+/* .portfolio-actions::before {
+  display: inline-block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(33, 150, 243, 0.9);
+} */
 .portfolio-pic {
   display: block;
   max-width: 100%;
@@ -622,6 +707,10 @@ ul {
   width: 370px;
   height: 404px;
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
